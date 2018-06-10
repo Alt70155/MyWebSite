@@ -50,7 +50,7 @@ a:hover {
 }
 
 header {
-  width: 960px;
+  max-width: 960px;
   height: 150px;
   margin: 0 auto;
 }
@@ -60,13 +60,15 @@ header {
 }
 
 .logo {
-  margin-top: 60px;
+  margin-top: 20px;
+  width: 600px;
+  min-width: 300px;
 }
 
 .global-nav {
   margin-top: 60px;
-  margin-left: 150px;
-  height: 50px;
+  margin-left: 80px;
+  height: 100px;
 }
 
 .global-nav li {
@@ -88,7 +90,7 @@ header {
 }
 
 .blog-nav {
-  margin-top: 115px;
+  margin-top: 126px;
 }
 
 .main-nav {
@@ -99,7 +101,6 @@ header {
 .main-nav li {
   flex-grow: 1;
   text-align: center;
-  display: block;
   background-color: rgba( 50, 50, 50, 0.50 );
   padding: 8px;
   width: 20%;
@@ -252,7 +253,7 @@ table {
 
 /*-----top end-----*/
 
-/*-----blog top start-----*/
+/*-----BlogArticleList start-----*/
 
 #wrap {
   background-color: white;
@@ -341,16 +342,13 @@ table {
   color: #CCCCCC;
 }
 
-/*-----blog top end-----*/
+/*-----BlogArticleList end-----*/
 
-/*-----blog page start-----*/
-.content {
+/*-----ArticleCmn start-----*/
+
+#Article_Cmn .content {
   margin: 0 auto;
   margin-top: -30px;
-  height: auto;
-}
-
-#blog .content {
   max-width: 760px;
   background-color: white;
   height: auto;
@@ -392,16 +390,11 @@ table {
   color: black;
 }
 
-/*-----Edge-----*/
-@supports (-ms-ime-align:auto) {
-  .top {
-    font-size: 37px;
-    margin-bottom: 35px;
-  }
-  #index .top {
-    font-size: 40px;
-  }
+/*-----ArticleCmn end-----*/
+
+@media screen and (max-width: 699px) {
   .blog-nav {
-    margin-top: 113px;
+    margin-top: 75px;
+    min-width: 450px;
   }
 }
