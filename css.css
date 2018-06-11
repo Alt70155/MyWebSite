@@ -51,24 +51,25 @@ a:hover {
 
 header {
   max-width: 960px;
-  height: 150px;
+  height: 325px;
   margin: 0 auto;
 }
 
 .nav-flex {
   display: flex;
+  justify-content: space-between;
 }
 
 .logo {
   margin-top: 20px;
-  width: 600px;
+  width: 440px;
   min-width: 300px;
 }
 
 .global-nav {
   margin-top: 60px;
-  margin-left: 80px;
   height: 100px;
+  max-width: 400px;
 }
 
 .global-nav li {
@@ -90,7 +91,7 @@ header {
 }
 
 .blog-nav {
-  margin-top: 126px;
+  margin-top: 110px;
 }
 
 .main-nav {
@@ -143,9 +144,9 @@ footer small {
   color: black;
 }
 
-/*-----top start-----*/
+/*-----Profile start-----*/
 
-#index {
+#Profile {
   background-image: url(images/pict.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -158,11 +159,11 @@ footer small {
   margin-right: auto;
 }
 
-#index .global-nav {
-  float: right;
+#Profile header {
+  height: 220px;
 }
 
-#index .top {
+#Profile .top {
   font-size: 50px;
   color: #FFFFFF;
   font-family: 'Kaushan Script', cursive;
@@ -170,18 +171,12 @@ footer small {
   margin-left: 30px;
 }
 
-#index header {
-  margin-bottom: -100px;
-}
-
-#index footer {
-  width: 960px;
-  margin: 150px auto 0 auto;
-  text-align: left;
+#Profile footer {
+  text-align: center;
   background-color: rgba( 0, 0, 0, 0 );
 }
 
-#index p {
+#Profile p {
   color: #FFFFFF;
   font-size: 17px;
 }
@@ -192,7 +187,7 @@ footer small {
   border-left: 6px solid #FFFFFF;
 }
 
-#index .title {
+#Profile .title {
   margin-top: -10px;
   margin-bottom: 6px;
   font-size: 30px;
@@ -212,7 +207,7 @@ table {
 }
 
 
-#index .prof th {
+#Profile .prof th {
   background-color: black;
   width: 240px;
   padding: 12px 0;
@@ -220,7 +215,7 @@ table {
   font-family: 'Montserrat', sans-serif;
 }
 
-#index .prof td {
+#Profile .prof td {
   background-color: rgba( 0, 0, 0, 0.55 );
   width: 660px;
   padding: 12px 40px;
@@ -247,17 +242,12 @@ table {
   height: 40px;
 }
 
-#top-wrap {
-  clear: both;
-}
-
-/*-----top end-----*/
+/*-----Profile end-----*/
 
 /*-----BlogArticleList start-----*/
 
 #wrap {
   background-color: white;
-  margin-top: 220px;
   padding-bottom: 50px;
   min-height: 600px;
   height: auto;
@@ -348,7 +338,6 @@ table {
 
 #Article_Cmn .content {
   margin: 0 auto;
-  margin-top: -30px;
   max-width: 760px;
   background-color: white;
   height: auto;
@@ -392,9 +381,9 @@ table {
 
 /*-----ArticleCmn end-----*/
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 731px) {
   .blog-nav {
-    margin-top: 75px;
+    margin-top: 60px;
     min-width: 450px;
   }
 }
