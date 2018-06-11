@@ -253,20 +253,27 @@ table {
   height: auto;
 }
 
-.blog-title {
+.blog-guide {
   color: black;
   font-size: 30px;
   text-align: center;
+  margin: auto;
   padding-top: 30px;
-  min-width: 960px;
+  max-width: 960px;
 }
 
 .container {
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
-  width: 800px;
-  justify-content: space-around;
+  min-width: 900px;
+  max-width: 960px;
+  height: 250px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 899px) {
+
 }
 
 .flex-item {
@@ -285,13 +292,6 @@ table {
 
 .blog-item {
   margin-top: 60px;
-}
-
-.container {
-  margin: 20px auto 0 auto;
-  display: flex;
-  width: 960px;
-  justify-content: space-between;
 }
 
 .flex-item {
