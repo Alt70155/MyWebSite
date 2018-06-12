@@ -5,70 +5,44 @@
   <meta charset="utf-8">
   <title></title>
   <style media="screen">
-    .container {
-      display: flex;
-      min-width: 900px;
-      max-width: 960px;
-      height: 300px;
-      margin: 20px auto 0 auto;
-      display: flex;
-      justify-content: space-between;
-      border: 1px solid black;
-    }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    min-width: 880px;
+    height: 700px;
+    margin: 20px auto 0 auto;
+    justify-content: space-between;
+  }
 
-    .flex-item {
-      max-width: 200px;
-      max-height: 140px;
-    }
+  .blog-item {
+    margin-top: 60px;
+  }
 
-    .flex-item img {
-      max-width: 300px;
-      max-height: 130px;
-    }
+  .flex-item {
+    max-width: 280px;
+    height: 210px;
+  }
 
+  .flex-item img {
+    width: 280px;
+    height: 130px;
 
-    .auto-side {
-      width: 50%;
-      height: auto;
-    }
-
-    .box:before {
-      content: "";
-      padding-top: 100%;
-      display: block;
-    }
-
-    .auto-side p {
-      font-size:1.25vw;
-      line-height: 1.3em;
-    }
+  }
   </style>
 </head>
 
-<body>
-  <div class="container">
-    <div class="auto-side box">
-      <div class="flex-item page1"><a href="#"><img src="images/pict.jpg" alt=""></a>
-        <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
-      </div>
-    </div>
-    <div class="auto-side box">
-      <div class="flex-item page2"><img src="images/jsgazou.png" alt="">
-        <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
-      </div>
-    </div>
-    <div class="auto-side box">
-      <div class="flex-item page3"><img src="images/html5gazou.jpg" alt="">
-        <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
-      </div>
-    </div>
+<body><div class="container">
+  <div class="flex-item page1"><a href="#"><img src="images/pict.jpg" alt=""></a>
+    <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
   </div>
-  <!--
-  <div class="adjust-box box-1x1">
-    <div class="inner">
-        <p>ブロック要素の中身です。ブロック要素自体も可変することができ、このテキストも一緒にサイズが可変することが確認頂けます。</p>
-    </div>
-</div> -->
+  <div class="flex-item page2"><img src="images/jsgazou.png" alt="">
+    <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
+  </div>
+  <div class="flex-item page3"><img src="images/html5gazou.jpg" alt="">
+    <p><a href="#">最新版で学ぶwebpack 3入門(図解付き) – JS開発で必須のモジュールバンドラー</a><br><span class="date">Posted on 2018/1/17</span></p>
+  </div>
+</div>
 </body>
 
 </html>
