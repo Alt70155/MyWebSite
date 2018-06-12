@@ -386,6 +386,33 @@ table {
 
 /*-----ArticleCmn end-----*/
 
+/*-----portfolio start-----*/
+
+.portfolio-title {
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  letter-spacing: 6px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.made-items-content {
+  max-width: 960px;
+  min-height: 800px;
+  margin: auto;
+
+}
+
+.made-item {
+  margin: 40px auto auto auto;
+  max-width: 740px;
+  min-height: 250px;
+  border: 1px solid black;
+}
+
+/*-----portfolio end-----*/
+
 @media screen and (max-width: 750px) {
   .top {
     font-size: 30px;
