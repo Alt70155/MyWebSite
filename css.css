@@ -244,6 +244,7 @@ table {
 #wrap {
   background-color: white;
   padding-bottom: 50px;
+  min-width: 640px;
   min-height: 600px;
   height: auto;
 }
@@ -352,9 +353,13 @@ table {
 }
 
 .text-title {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto 0 auto;
   padding-top: 30px;
+}
+
+.text-content ul {
+  margin-left: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .text-sub-title, .text-content, .text-title {
@@ -382,6 +387,7 @@ table {
 
 .text-content p, .text-title h1 {
   color: black;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /*-----ArticleCmn end-----*/
@@ -397,18 +403,47 @@ table {
   padding-top: 10px;
 }
 
+.portfolio-link {
+  direction: none;
+}
+
 .made-items-content {
   max-width: 960px;
   min-height: 800px;
   margin: auto;
+  margin-top: -18px;
+}
 
+.made-item img {
+  max-width: 400px;
+  height: 300px;
+}
+
+.made-item a:hover img{
+  opacity: 0.7
 }
 
 .made-item {
   margin: 40px auto auto auto;
+  padding: 30px 30px 30px 40px;
   max-width: 740px;
   min-height: 250px;
   border: 1px solid black;
+  display: flex;
+}
+
+.made-item-description {
+  width: 360px;
+  padding: 0px 20px 20px 30px;
+}
+
+.made-item-description h1 {
+  color: black;
+  display: inline;
+}
+
+.made-item-description p {
+  color: black;
 }
 
 /*-----portfolio end-----*/
