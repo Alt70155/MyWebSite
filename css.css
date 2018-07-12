@@ -117,6 +117,7 @@ a:hover {
 
 .main-nav li a {
   color: white;
+  display: block;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
 }
