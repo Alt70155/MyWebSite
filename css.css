@@ -144,105 +144,6 @@ footer small {
   color: black;
 }
 
-/*-----Profile start-----*/
-
-#Profile {
-  background-image: url(images/header.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  max-width: 960px;
-  min-width: 460px;
-  overflow-x: scroll;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#Profile header {
-  height: 220px;
-}
-
-#Profile .top {
-  font-size: 50px;
-  color: #FFFFFF;
-  font-family: 'Kaushan Script', cursive;
-  margin-top: 25px;
-  margin-left: 30px;
-}
-
-#Profile footer {
-  text-align: center;
-  background-color: rgba( 0, 0, 0, 0);
-}
-
-#Profile p {
-  color: #FFFFFF;
-  font-size: 17px;
-}
-
-.title:before {
-  content: "";
-  padding-right: 13px;
-  border-left: 6px solid #FFFFFF;
-}
-
-#Profile .title {
-  margin-top: -10px;
-  margin-bottom: 6px;
-  font-size: 30px;
-  font-family: 'Ropa Sans', sans-serif;
-}
-
-.main-center {
-  background-color: rgba( 0, 0, 0, 0.55);
-  padding: 30px 30px 30px 30px;
-}
-
-table {
-  color: white;
-  border-collapse: collapse;
-  text-align: center;
-  margin-top: 17px;
-}
-
-#Profile .prof th {
-  background-color: black;
-  width: 240px;
-  padding: 12px 0;
-  border: 1px solid white;
-  font-family: 'Montserrat', sans-serif;
-}
-
-#Profile .prof td {
-  background-color: rgba( 0, 0, 0, 0.55);
-  width: 660px;
-  padding: 12px 40px;
-  border: 1px solid white;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.fnt {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.sns-link {
-  margin: -3px 15px;
-}
-
-.sns {
-  margin-top: 25px;
-  display: flex;
-}
-
-.twitter_tag {
-  text-decoration: none;
-  width: 40px;
-  height: 40px;
-}
-
-/*-----Profile end-----*/
-
 /*-----index start-----*/
 
 #wrap {
@@ -461,6 +362,7 @@ table {
 }
 
 /*-----portfolio end-----*/
+
 @media screen and (max-width: 750px) {
   .top {
     font-size: 30px;
