@@ -413,3 +413,10 @@ footer small {
       padding-right: 15px;
     }
 }
+
+/*Edge対応*/
+@supports (-ms-ime-align:auto) {
+  .logo {
+    min-width: 500px;
+  }
+}
