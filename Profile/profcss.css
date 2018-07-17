@@ -139,14 +139,14 @@ footer small {
 }
 
 header {
-  height: 210px;
+  height: 170px;
 }
 
 .top {
   font-size: 50px;
   color: #FFFFFF;
   font-family: 'Kaushan Script', cursive;
-  margin-top: 45px;
+  margin-top: 30px;
   margin-left: 30px;
 }
 
@@ -238,5 +238,17 @@ table {
 @media screen and (max-width: 697px) {
   .top {
     font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top {
+    font-size: 20px;
+  }
+  .global-nav {
+    min-width: 160px;
+  }
+  .global-nav li {
+    font-size: 12px;
   }
 }
