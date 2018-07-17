@@ -8,7 +8,7 @@ body {
   font-size: 15px;
   line-height: 2;
   overflow-x: hidden;
-  min-height: 960px;
+  min-height: 900px;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -202,19 +202,27 @@ table {
   font-family: 'Montserrat', sans-serif;
 }
 
-.sns-link {
-  margin: -3px 15px;
-}
-
 .sns {
   margin-top: 25px;
   display: flex;
 }
 
-.twitter_tag {
+.sns-twi {
+  margin: -3px 15px;
+}
+
+.twi-image {
   text-decoration: none;
   width: 40px;
   height: 40px;
+}
+
+.github-image {
+  text-decoration: none;
+  width: 60px;
+  height: 60px;
+  margin-top: -12px;
+  margin-left: 5px;
 }
 
 
