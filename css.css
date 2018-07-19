@@ -186,7 +186,6 @@ footer small {
 .flex-item img {
   width: 280px;
   height: 130px;
-  border: 1px solid black;
 }
 
 .flex-item img:hover {
@@ -205,6 +204,10 @@ footer small {
 .flex-item p {
   margin-top: 10px;
   color: black;
+}
+
+.hidden-item {
+  visibility:hidden;
 }
 
 .date {
@@ -254,6 +257,9 @@ footer small {
   .flex-item img {
     width: 450px;
     height: 240px;
+  }
+  .hidden-item {
+    display: none;
   }
 }
 
