@@ -169,7 +169,6 @@ footer small {
   max-width: 960px;
   height: auto;
   margin: 20px auto 0 auto;
-  justify-content: space-between;
 }
 
 .blog-item {
@@ -260,7 +259,7 @@ footer small {
 
 /*-----ArticleCmn start-----*/
 
-#Article_Cmn .content {
+#article_common .content {
   margin: 0 auto;
   max-width: 760px;
   background-color: white;
@@ -407,7 +406,7 @@ footer small {
       background-size: 100%;
     }
     /*page記事の内側*/
-    #Article_Cmn #wrap{
+    #article_common #wrap{
       font-size: 20px;
       padding-left: 15px;
       padding-right: 15px;
