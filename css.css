@@ -169,6 +169,7 @@ footer small {
   max-width: 960px;
   height: auto;
   margin: 20px auto 0 auto;
+  justify-content: space-around;
 }
 
 .blog-item {
@@ -185,6 +186,7 @@ footer small {
 .flex-item img {
   width: 280px;
   height: 130px;
+  border: 1px solid black;
 }
 
 .flex-item img:hover {
