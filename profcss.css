@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 body {
   margin: 0;
   padding: 0;
@@ -39,7 +38,6 @@ a:hover {
 
 .global-nav {
   margin-top: 60px;
-
   height: 100px;
   max-width: 400px;
 }
@@ -181,13 +179,10 @@ p {
 table {
   color: white;
   border-collapse: 10px;
-  /*text-align: center;*/
-  margin-top: 17px;
   border: none;
 }
 
 .prof th {
-  /*background-color: black;*/
   width: 70px;
   height: 30px;
   text-align: left;
@@ -195,7 +190,7 @@ table {
   font-family: 'Montserrat', sans-serif;
 }
 
- .prof td {
+.prof td {
   /*background-color: rgba( 0, 0, 0, 0.55);*/
   width: 660px;
   padding: 12px 40px;
@@ -225,6 +220,25 @@ table {
   margin-left: 5px;
 }
 
+.square_btn {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  text-decoration: none;
+  color: white;
+  border: solid 2px white;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.square_btn:hover {
+  opacity: 0.7;
+  background: black;
+  text-decoration: none;
+  color: white;
+}
 
 @media screen and (max-width: 874px) {
   .top {
@@ -243,6 +257,7 @@ table {
     font-size: 17px;
   }
 }
+
 @media screen and (max-width: 697px) {
   .top {
     font-size: 30px;
