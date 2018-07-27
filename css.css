@@ -411,7 +411,7 @@ footer small {
       width: 700px;
     }
     header {
-      background-size: 100%;
+      background-size: contain;
     }
     /*page記事の内側*/
     #article_common #wrap{
