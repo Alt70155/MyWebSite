@@ -312,6 +312,30 @@ footer small {
   font-family: 'Montserrat', sans-serif;
 }
 
+/*---コードブロックの設定---*/
+.language-tag {
+  width: 80px;
+  height: 16px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+pre {
+  margin-top: 0px;
+  white-space: pre;
+  overflow: auto;
+}
+
+code {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.prettyprint ol.linenums>li {
+  list-style-type: decimal;
+}
+
 /*-----ArticleCmn end-----*/
 
 /*-----portfolio start-----*/
