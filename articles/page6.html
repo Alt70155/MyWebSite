@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=480">
+  <title>リモートサーバからローカルへディレクトリをコピーする方法</title>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="shortcut icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css.css">
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body id="article_common">
+
+  <!--header-->
+  <header>
+    <div class="nav-flex">
+      <div class="logo">
+        <a href="http://knowledge-blog.net">
+          <h1 class="top">Knowledge of programming</h1>
+          <p class="sub-title">専門学生の技術系・WEB開発ブログ</p>
+        </a>
+      </div>
+      <nav>
+        <ul class="global-nav">
+          <li><a href="../index.html">Blog</a></li>
+          <li><a href="../profile.html">Profile</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="blog-nav">
+      <ul class="main-nav">
+        <li><a href="../category/nav_htmlcss.html">HTML/CSS</a></li>
+        <li><a href="../category/nav_javascript.html">JavaScript</a></li>
+        <li><a href="../category/nav_ope.html">サイト運営</a></li>
+        <li><a href="../category/nav_other.html">その他</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!--wrap-->
+  <div id="wrap">
+    <div class="content">
+      <div class="text-content">
+
+        <div class="text-title">
+          <h1>リモートサーバからローカルへディレクトリをコピーする方法</h1>
+        </div>
+
+        <p>ファイルをやり取りするだけならtera termのscpを使えば簡単にできるのですが、ディレクトリごと持ってきたい時に困ったのでメモ</p>
+
+        <p>環境はCentOS7(リモート)からwindows(ローカル)のデスクトップへディレクトリをコピーする。</p>
+
+        <div class="text-sub-title">
+          <h2 class="sub-title-border">&nbsp;やり方</h2>
+        </div>
+
+        <p>
+          ローカル(windowsのほう)のコマンドラインで<br>
+          <pre class="prettyprint linenums"><code>scp -i C:/Users/name/Documents/rsa_file -r -P 1234 user@192.168.x.y:/var/www/html/ C:/Users/name/Desktop
+          </code></pre>
+          以上のコマンドでサーバの/var/www/html/配下にあるディレクトリを丸ごとローカルのdesktopにコピーできました。
+          もしかしたらtera termでもできるかもしれませんが、調べた所これで出来たのでひとまず良しとしましょう。。。
+        </p>
+
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <footer>
+    <small>(C)2018 knowledge-Blog.</small>
+  </footer>
+</body>
+
+</html>
