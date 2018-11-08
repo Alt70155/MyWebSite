@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=480">
+  <title></title>
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="shortcut icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="../css.css">
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+
+<body id="article_common">
+
+  <!--header-->
+  <header>
+    <div class="nav-flex">
+      <div class="logo">
+        <a href="http://knowledge-blog.net">
+          <h1 class="top">Knowledge of programming</h1>
+          <p class="sub-title">専門学生の技術系・WEB開発ブログ</p>
+        </a>
+      </div>
+      <nav>
+        <ul class="global-nav">
+          <li><a href="../index.html">Blog</a></li>
+          <li><a href="../profile.html">Profile</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="blog-nav">
+      <ul class="main-nav">
+        <li><a href="../category/nav_htmlcss.html">HTML/CSS</a></li>
+        <li><a href="../category/nav_javascript.html">JavaScript</a></li>
+        <li><a href="../category/nav_ope.html">サイト運営</a></li>
+        <li><a href="../category/nav_other.html">その他</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!--wrap-->
+  <div id="wrap">
+    <div class="content">
+      <div class="text-content">
+
+        <div class="text-title">
+          <h1>ライフゲームをJavaScriptで作ってみた</h1>
+        </div>
+        <p>中学生の頃、初めてのプログラミングでC言語を勉強し、その時に写経で作ったのがライフゲームだったのを思い出したので、再び作ってみました。<br>
+          結局、当時の自分には難しすぎてC言語もろとも挫折したのですが。。。今回は無事に完成してよかったです(笑)
+        </p>
+        <div class="text-sub-title">
+          <h2 class="sub-title-border">&nbsp;ライフゲームとは</h2>
+        </div>
+        <p> wikipediaより <br>
+          <i style="color:grey"> <blockquote>ライフゲームとは1970年にイギリスの数学者ジョン・ホートン・コンウェイが考案した生命の誕生、進化、淘汰などのプロセスを簡易的なモデルで再現したシミュレーションゲームである。単純なルールでその模様の変化を楽しめるため、パズルの要素を持っている。</blockquote> </i></p>
+        <p>ルールは単純で、 <br>
+          ・生命のいないマス(死んでいるマス)の周囲にちょうど３個の生命がある場合に新しく生命が誕生 <br>
+          ・生命がいるマスは、周囲に２個、または３個の生命がいる場合に、そのまま生命が残る。 そうでない場合には死ぬ(過疎・過密) <br>
+          のみ。条件分岐的には簡単ですね
+        </p>
+        <div class="text-sub-title">
+          <h2 class="sub-title-border">&nbsp;ソースコードとちょっとした解説</h2>
+        </div>
+        <p>コードは結構長くなってしまいました... <br>
+          純粋なライフゲームの本体部分だけならもっと短いですが、クリックで形を作ったりするなどの機能を入れたので140行あります(^_^;) <br><br>
+          どうしてもDOMを構成するinitializeが重くなってしまい、削減できませんでした...<br>
+          あと、tableの外枠を一つ多く取って、生死判断を上手いことやろうと思ったのですが、その外枠を探して消す作業もかなりの量を取ってしまいました。 <br><br>
+          たぶん他にもやりようはいくつもあるかと思います。 <br><br>
+          少し気を使った点としては、今回はfor文をあまり使わず、なるべくforEachを使うようにしました。 <br>
+          tableを構成する部分や、二重ループで配列を扱う部分は、かなり分かりづらいかもしれません。。。すいません。 <br>
+        </p>
+        <p>
+          <h3 style="color:black">全体的な構成と流れ</h3>
+          tableとそれに合わせた二次元配列で状態を保存する <br>
+          二次元配列から周囲の生死を条件分岐でカウントし、次の状態を格納する配列に状態を保存 <br>
+          その配列を元にtdに色を塗る
+          これを0.1秒単位で繰り返す
+        </p>
+        <p>
+          <h3 style="color:black">各関数の主な仕事(重要なところだけ)</h3>
+          <ul>
+            <li><b>init</b> <br>
+              初期化処理 <br>
+              td要素を作成し、それぞれに操作用のidと色のclass、click時の関数を付与 <br>
+              tdの数に合わせて現在のセルの状態を格納する配列を同じ数作成 <br>
+              次の状態を格納するための配列を複製する <br>
+            </li>
+
+            <li><b>lifeDeathJudge</b> <br>
+              自マスの周囲8方向の生死を判定しカウントする <br>
+              diffCoor(差分座標)を二重ループで回すことにより、周囲8方向の配列にアクセスする <br>
+              [-1, -1] [-1, 0] [-1, 1] <br>
+              [0,&nbsp; -1] [0,&nbsp; 0] [0,&nbsp; 1] <br>
+              [1, &nbsp;-1] [1,&nbsp; 0] [1, &nbsp;1] <br>
+              ↑こんな感じ
+            </li>
+
+            <li><b>updateArrayToNextState</b> <br>
+              lifeDeathJudge関数で周囲の生存マスをカウントし、その数によって次の生死判定をする <br>
+              複製した配列に次の状態を格納 <br>
+              最後に現在の状態の配列に上書きする <br>
+              別の配列を用意しないで次々と上書きしていった場合、現在と次の状態が入り混じり、判定がおかしくなってしまうので注意 <br>
+            </li>
+
+            <li><b>updateCellColor</b> <br>
+              updateArrayToNextStateから次の状態を格納した配列を受け取り、二重ループの添字からtdのidを計算する <br>
+              生だった場合は黒を、死だった場合は白をpaint関数で塗る
+            </li>
+
+            <li><b>paintBlack/White</b> <br>
+              引数に受け取ったidのhtml要素をgetし、黒または白のclassを付与して着色
+            </li>
+          </ul>
+          <br>
+          <p>
+            だいたいの説明はこんな感じです。ソースコードは下に↓↓
+          </p>
+        </p>
+        <pre class="prettyprint linenums"><code>
+const tableSize = 40;
+let currentState = [];
+let currentNextState = [];
+let id;
+let sameAsBeforeCnt = 0;
+
+let init = () => {
+  let table = document.getElementById("table");
+  let ct = 0;
+  for (let i = 0; i < tableSize; i++) {
+    let tr = document.createElement("tr");
+    let currentStateTemp = [];
+    for (let j = 0; j < tableSize; j++) {
+      let td = document.createElement("td");
+      outerFrameHidden(td, ct, i, j);
+      td.id = "num" + ct;
+      td.classList.add("white");
+      td.onclick = onClickFunc;
+      tr.appendChild(td);
+      currentStateTemp.push(0);
+      ct++;
+    }
+    table.appendChild(tr);
+    currentState.push(currentStateTemp);
+  }
+  //currentStateをNextに値渡しして配列を複製
+  currentNextState = JSON.parse(JSON.stringify(currentState));
+}
+
+let onClickFunc = (e) => {
+  let targetId = e.target.id;
+  //要素の最初のクラスを取得
+  let targetClass = e.target.className.split(" ")[0];
+  //classが外枠のクラスだった場合をはじく
+  if (targetClass !== "left-side" && targetClass !== "right-side" &&
+      targetClass !== "upper-side" && targetClass !== "bottom-side") {
+    initPaintFunc(targetId);
+  }
+}
+
+
+let updateArrayToNextState = () => {
+  //外枠を抜かして判定
+  for (let i = 1; i != tableSize - 1; i++) {
+    for (let j = 1; j != tableSize - 1; j++) {
+      let n = lifeDeathJudge(i, j);
+      if (currentState[i][j]) {
+        n === 2 || n === 3 ? currentNextState[i][j] = 1 : currentNextState[i][j] = 0;
+      } else {
+        n === 3 ? currentNextState[i][j] = 1 : currentNextState[i][j] = 0;
+      }
+    }
+  }
+  infinityCheck();
+  //配列を上書き
+  return currentState = JSON.parse(JSON.stringify(currentNextState));
+}
+
+let updateCellColor = () => {
+  updateArrayToNextState().forEach(function(y, index1) {
+    y.forEach(function(x, index2) {
+      //二次元配列のindexからid番号を計算
+      let idNum = index1 * tableSize + index2;
+      if (x === 1) {
+        paintBlack("num" + idNum);
+      } else {
+        paintWhite("num" + idNum);
+      }
+    });
+  });
+}
+
+//自マスの周りの生死を判定
+let lifeDeathJudge = (i, j) => {
+  let aliveState = 0;
+  let diffCoor = [-1, 0 ,1];
+  diffCoor.forEach(function(y) {
+    diffCoor.forEach(function(x) {
+      //現座標から周囲8方向の座標を計算
+      let iy = i + y;
+      let jx = j + x;
+       //比較する座標がx,y両方i,yと同じだった場合(自分のマスだった場合)、カウントしない
+      if (iy != i || jx != j) {
+        if (currentState[iy][jx] === 1) {
+          aliveState++;
+        }
+      }
+    });
+  });
+  return aliveState;
+}
+
+let initPaintFunc = (paintTileId) => {
+  //IDから二次元配列の座標を取り出す
+  let result = paintTileId.split("m");
+  let i = result[1] / tableSize;
+  let j = result[1] % tableSize;
+  i = Math.floor(i);
+  if (currentState[i][j]) {
+    currentState[i][j] = 0;
+    paintWhite(paintTileId);
+  } else {
+    currentState[i][j] = 1;
+    paintBlack(paintTileId);
+  }
+}
+
+let paintBlack = (paintTileId) => {
+  let td = document.getElementById(paintTileId);
+  td.classList.remove("white");
+  td.classList.add("black");
+}
+
+let paintWhite = (paintTileId) => {
+  let td = document.getElementById(paintTileId);
+  td.classList.remove("black");
+  td.classList.add("white");
+}
+
+//外枠１マス分多く取って処理・計算しているため、tableの一番外側を非表示にする。
+let outerFrameHidden = (td, ct, i, j) => {
+  if (i === 0) {
+    td.classList.add("upper-side");
+  }
+  if (i !== 0 && ct % tableSize === 0) {
+    td.classList.add("left-side");
+  }
+  if (ct % tableSize === tableSize - 1) {
+    td.classList.add("right-side");
+  }
+  if (ct >= tableSize * tableSize - tableSize) {
+    td.classList.add("bottom-side");
+  }
+}
+
+
+let infinityCheck = () => {
+  //無限ループ防止に前回の配列と100秒間同じだった場合止める
+  const STOP_TIME = 100;
+  if(currentState.toString() === currentNextState.toString()) {
+    sameAsBeforeCnt++;
+    if(sameAsBeforeCnt === STOP_TIME) {
+      stop();
+    }
+  }
+}
+
+let clearTable = () => {
+  if(typeof id !== "undefined") {
+    stop();
+  }
+  currentState.forEach(function(y, idx1) {
+    currentState.forEach(function(x, idx2) {
+      if(currentState[idx1][idx2] === 1) {
+        currentState[idx1][idx2] = 0;
+        let targetId = idx1 * tableSize + idx2;
+        paintWhite("num" + targetId);
+      }
+    });
+  });
+}
+
+let start = () => {
+  id = setInterval(updateCellColor, 100);
+}
+
+let stop = () => {
+  clearInterval(id);
+}
+        </code></pre>
+      </div>
+    </div>
+  </div>
+  <!--footer-->
+  <footer>
+    <small>(C)2018 knowledge-Blog.</small>
+  </footer>
+</body>
+
+</html>
