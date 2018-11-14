@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=480">
-  <title></title>
+  <title>ライフゲームをJavaScriptで作ってみた(解説)</title>
   <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
@@ -49,7 +49,7 @@
       <div class="text-content">
 
         <div class="text-title">
-          <h1>ライフゲームをJavaScriptで作ってみた</h1>
+          <h1>ライフゲームをJavaScriptで作ってみた(解説)</h1>
         </div>
         <p>中学生の頃、初めてのプログラミングでC言語を勉強し、その時に写経で作ったのがライフゲームだったのを思い出したので、再び作ってみました。<br>
           結局、当時の自分には難しすぎてC言語もろとも挫折したのですが。。。今回は無事に完成してよかったです(笑)
@@ -67,17 +67,17 @@
         <div class="text-sub-title">
           <h2 class="sub-title-border">&nbsp;ソースコードとちょっとした解説</h2>
         </div>
-        <p>コードは結構長くなってしまいました... <br>
-          純粋なライフゲームの本体部分だけならもっと短いですが、クリックで形を作ったりするなどの機能を入れたので140行あります(^_^;) <br><br>
-          どうしてもDOMを構成するinitializeが重くなってしまい、削減できませんでした...<br>
-          あと、tableの外枠を一つ多く取って、生死判断を上手いことやろうと思ったのですが、その外枠を探して消す作業もかなりの量を取ってしまいました。 <br><br>
-          たぶん他にもやりようはいくつもあるかと思います。 <br><br>
-          少し気を使った点としては、今回はfor文をあまり使わず、なるべくforEachを使うようにしました。 <br>
-          tableを構成する部分や、二重ループで配列を扱う部分は、かなり分かりづらいかもしれません。。。すいません。 <br>
+        <p>コードはボタン処理などを抜かすと100行ちょいです。<br>
+          リファクタにリファクタを重ねた()ので、まぁまぁ分かりやすく綺麗に書けたのではないかなと思っています。<br>
+          ただ、init関数が少し長いかなぁと思ったり。あれ以上は減らせませんでした。
+          <br><br>
+          少し気を使った点としては、仕事ごとにしっかり関数を別けるというのと、今回はfor文をあまり使わず、forEachを使ったりなどもしました。 <br>
+          ただ、あんまり慣れない人はtableを構成する部分や、二重ループで配列を扱う部分は、すこし分かりづらいかもしれません。。。 <br>
         </p>
         <p>
           <h3 style="color:black">全体的な構成と流れ</h3>
           tableとそれに合わせた二次元配列で状態を保存する <br>
+          周囲8マスを判定するため、配列はtableより外枠を一マス多くする <br>
           二次元配列から周囲の生死を条件分岐でカウントし、次の状態を格納する配列に状態を保存 <br>
           その配列を元にtdに色を塗る
           これを0.1秒単位で繰り返す
